@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'simple_history',
     'drf_yasg',
     'users',
     'shipments',
@@ -39,15 +40,16 @@ REST_FRAMEWORK = {
 
 }
 
-SWAGGER_SETTINGS = {
-    'VALIDATOR_URL': 'http://localhost:8000',
-}
+#SWAGGER_SETTINGS = {
+#    'VALIDATOR_URL': 'http://localhost:8000',
+#}
 
 REDOC_SETTINGS = {
     'DOC_EXPANSION': 'none'
 }
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,4 +132,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
