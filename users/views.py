@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework.generics import GenericAPIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from users.serializers import UserSerializer
 
@@ -10,3 +13,11 @@ class UserViewSets(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return self.serializer_class.Meta.model.objects.all()
+
+
+class Login(TokenObtainPairView):
+    pass
+
+
+class Logout(GenericAPIView):
+    pass
